@@ -1,0 +1,16 @@
+# Virtual Environment
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/sql_app.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment
+.env
+backend/.env
+frontend/.env

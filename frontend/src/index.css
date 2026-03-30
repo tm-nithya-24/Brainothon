@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+@theme {
+  --color-brand-primary: #d946ef;
+  --color-brand-secondary: #6366f1;
+  --color-brand-accent: #22d3ee;
+}
+
+:root {
+  --glow-fuchsia: rgba(217, 70, 239, 0.4);
+  --glow-indigo: rgba(99, 102, 241, 0.4);
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #02010a;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+h1, h2, h3, .brand-font {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Stunning Animated Nebula Background */
+.nebula-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #030014 0%, #000000 100%);
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+body.light .nebula-container {
+  background: radial-gradient(circle at 50% 50%, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+  animation: float 25s infinite alternate;
+}
+
+.blob-1 {
+  background: radial-gradient(circle, var(--color-brand-primary) 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+body.light .blob {
+  opacity: 0.15;
+}
+
+.blob-2 {
+  background: radial-gradient(circle, var(--color-brand-secondary) 0%, transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  background: radial-gradient(circle, var(--color-brand-accent) 0%, transparent 70%);
+  top: 40%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  animation-delay: -10s;
+  animation-duration: 30s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(100px, 150px) scale(1.1); }
+  66% { transform: translate(-50px, 200px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Judge-winning Glassmorphism */
+.glass {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+body.light .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body.light .glass-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card:hover {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(217, 70, 239, 0.3);
+  box-shadow: 0 0 40px rgba(217, 70, 239, 0.15);
+  transform: translateY(-8px) scale(1.02);
+}
+
+body.light .glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(217, 70, 239, 0.1);
+}
+
+/* Cybernetic Glowing Buttons */
+.btn-cyber {
+  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px var(--glow-fuchsia);
+}
+
+.btn-cyber:hover {
+  box-shadow: 0 0 25px var(--glow-fuchsia), 0 0 50px rgba(217, 70, 239, 0.3);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btn-cyber::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: rotate(45deg);
+  transition: 0.6s;
+}
+
+.btn-cyber:hover::after {
+  left: 120%;
+}
+
+/* Typography Gradient */
+.text-gradient {
+  background: linear-gradient(to right, #f472b6, #818cf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar tweaks */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #02010a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #312e81;
+}
