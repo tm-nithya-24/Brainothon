@@ -5,7 +5,7 @@ import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle, XCircle, Brain, Zap, Medal } from 'lucide-react';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 type Question = {
   id: number;

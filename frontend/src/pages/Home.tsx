@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Brain, HelpCircle, LogIn, UserPlus } from 'lucide-react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export default function Home() {
   const { user, login } = useAuth();
