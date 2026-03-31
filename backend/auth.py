@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -9,7 +10,7 @@ import schemas
 import models
 from database import get_db
 
-SECRET_KEY = "dummy-secret-key-for-now-generate-a-safe-one-in-production"
+SECRET_KEY = os.getenv("SECRET_KEY", "dummy-secret-key-for-now-generate-a-safe-one-in-production")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 # 1 day
 
